@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Project</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .modal{
+        width: 250px;
+        height: 100px;
+        border: 3px solid black;
+        text-align: center;
+        border-radius: 10px;
+        
+
+    }
+    .modal .open-btn{
+        padding: 5px;
+        margin-top: 15px;
+        border-radius: 5px;
+    }
+    .modal .open-btn:hover{
+        background-color: aqua;
+    }
+    .modal-overlay{
+        position: fixed;
+        height: 200px;
+        width: 300px;
+        border: 3px solid blueviolet;
+        background-color: darkseagreen;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        z-index: -10;
+        
+    }
+    .close-btn{
+        padding: 5px;
+        margin-left: 15px;
+        border-radius: 5px;
+    }
+    .close-btn:hover{
+        background-color: aqua;
+
+    }
+    .open-modal{
+        visibility: visible;
+        z-index: 10;
+    }
+</style>
+<body>
+    <div class="modal">
+        <h1>Modal Project</h1>
+        <button class="open-btn">OPEN MODAL</button>
+    </div>
+    <div class="modal-overlay">
+        <h1>MODAL</h1>
+        <button class="close-btn">CLOSE MODAL</button>
+    </div>
+</body>
+<script>
+    const openbtn = document.querySelector(".open-btn")
+    const closebtn = document.querySelector(".close-btn")
+    const modaloverlay = document.querySelector(".modal-overlay")
+
+
+ openbtn.addEventListener("click",()=>{
+ modaloverlay.classList.add("open-modal")
+ })
+ closebtn.addEventListener("click",()=>{
+ modaloverlay.classList.remove("open-modal")
+ })
+</script>
+</html>
